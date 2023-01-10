@@ -1,13 +1,16 @@
 {
-  "name": "backend",
+  "name": "backend-nodejs-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto-curso de backend em nodejs usando express",
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "production": "pm2 start index.js --name knowledge-backend"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabricioMll/backend-nodejs-express.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,16 +20,20 @@
     "cors": "2.8.4",
     "express": "4.16.3",
     "jwt-simple": "0.5.1",
-    "knex": "0.15.2",
+    "knex": "^0.15.2",
     "moment": "2.22.2",
     "mongoose": "^5.2.17",
     "node-schedule": "1.3.0",
     "passport": "0.4.0",
     "passport-jwt": "4.0.0",
-    "pg": "7.4.3",
+    "pg": "8.0.3",
     "pm2": "3.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/FabricioMll/backend-nodejs-express/issues"
   },
   "devDependencies": {
     "nodemon": "1.18.4"
-  }
+  },
+  "homepage": "https://github.com/FabricioMll/backend-nodejs-express#readme"
 }
