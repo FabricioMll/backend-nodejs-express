@@ -1,6 +1,3 @@
-// import bodyParser from 'body-parser';
-// import cors from 'cors';
-
 const bodyParser = require('body-parser')
 const cors = require('cors')
 

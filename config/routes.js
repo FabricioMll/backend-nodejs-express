@@ -1,9 +1,11 @@
 // const category = require("../api/category")
 
 module.exports = app => {
-    app.route('/users')
-        .post(app.api.user.save)
-        .get(app.api.user.get)
+    app.post('/signup', app.api.user.save)
+    app.post('/signin', app.api.auth.signin)
+    app.post('/validateToken', app.api.auth.validateToken)
+
+    app.get('/users', app.api.user.get)
     
     app.route('/users/:id')
         .put(app.api.user.save)
@@ -21,6 +23,9 @@ module.exports = app => {
         .put(app.api.category.save)
         .delete(app.api.category.remove)
 
+    app.route('/categories/:id/articles')
+        .get(app.api.article.getByCategory)
+
     app.route('/articles')
         .get(app.api.article.get)
         .post(app.api.article.save)
@@ -29,4 +34,7 @@ module.exports = app => {
         .get(app.api.article.getById)
         .put(app.api.article.save)
         .delete(app.api.article.remove)
+
+   
+
 }
