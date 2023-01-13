@@ -18,7 +18,7 @@ module.exports = app => {
     app.route('/categories')
         .all(app.config.passport.authenticate())
         .get(app.api.category.get)
-        .post(app.api.category.save)
+        .post(admin(app.api.category.save))
 
     app.route('/categories/tree')
         .all(app.config.passport.authenticate())
@@ -26,7 +26,7 @@ module.exports = app => {
 
     app.route('/categories/:id')
         .all(app.config.passport.authenticate())
-        .get(app.api.category.getById)
+        .get(admin(app.api.category.getById))
         .put(admin(app.api.category.save))
         .delete(admin(app.api.category.remove))
 
