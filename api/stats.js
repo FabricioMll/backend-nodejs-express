@@ -16,7 +16,6 @@ module.exports = app => {
                 }
                 res.json(stat || defaultStat)
             })
-            
     }
 
     return { Stat, get }

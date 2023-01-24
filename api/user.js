@@ -67,7 +67,8 @@ module.exports = app => {
     }
 
     const remove = async (req, res) => {
-        try {
+        if (req.params.id) {
+           try {
             const articles = await app.db('articles')
                 .where({ userId: req.params.id })
             notExistsOrError(articles, 'Usuário possui artigos.')
@@ -80,7 +81,11 @@ module.exports = app => {
             res.status(204).send()
         } catch(msg) {
             res.status(400).send(msg)
+        } 
+        } else {
+            res.status(400).send("Usuário não informado")
         }
+        
     }
 
     return { save, get, getById, remove }
